@@ -76,6 +76,8 @@ sendBtn.addEventListener('click', () => {
         eta: newAge
     }
 
+    newDisplay.innerHTML = "";
+
     if (newName === "") {
         newDisplay.innerHTML += `<br> Non hai inserito il nome`;
     } else if (newSurname === "") {
@@ -83,7 +85,6 @@ sendBtn.addEventListener('click', () => {
     } else if (isNaN(newAge)) {
         newDisplay.innerHTML += `<br> L'età dello studente non è valida`;
     } else {
-        newDisplay.innerHTML = "";
         studentList.push(newStudent);
         console.log(studentList);
         newDisplay.innerHTML += `<br> Il nuovo studente è ${newStudent.nome} ${newStudent.cognome} ed ha ${newStudent.eta} anni.`
