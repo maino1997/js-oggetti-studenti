@@ -51,10 +51,21 @@ console.log(studentList);
 
 let nameSurname = "";
 
+// Opzione 1 
+// for (let j = 0; j < studentList.length; j++) {
+//     const name = studentList[j].nome;
+//     const surname = studentList[j].cognome;
+//     nameSurname += ` ${name} ${surname}`;
+// }
+
+// Opzione 2
 for (let j = 0; j < studentList.length; j++) {
-    const name = studentList[j].nome;
-    const surname = studentList[j].cognome;
-    nameSurname += ` ${name} ${surname}`;
+    const listObject = studentList[j];
+    for (key in listObject) {
+        if (key === "nome" || key === "cognome") {
+            nameSurname += ` ${listObject[key]}`;
+        }
+    }
 }
 
 displayElement.innerHTML += `<br> ${nameSurname}`;
