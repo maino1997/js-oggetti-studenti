@@ -1,0 +1,7 @@
+input {
+    border: 0;
+}
+
+#new-surname , #new-age{
+    border-top: 1px solid black;
+}

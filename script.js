@@ -62,6 +62,7 @@ displayElement.innerHTML += `<br> ${nameSurname}`;
 
 // Quinta richiesta BONUS
 const sendBtn = document.getElementById("send");
+const newDisplay = document.getElementById("new-display");
 
 
 sendBtn.addEventListener('click', () => {
@@ -75,9 +76,18 @@ sendBtn.addEventListener('click', () => {
         eta: newAge
     }
 
-    studentList.push(newStudent);
-    console.log(studentList);
-    displayElement.innerHTML += `<br> Il nuovo studente è ${newStudent.nome} ${newStudent.cognome} ed ha ${newStudent.eta} anni.`
+    if (newName === "") {
+        newDisplay.innerHTML += `<br> Non hai inserito il nome`;
+    } else if (newSurname === "") {
+        newDisplay.innerHTML += `<br> Non hai inserito il cognome`;
+    } else if (isNaN(newAge)) {
+        newDisplay.innerHTML += `<br> L'età dello studente non è valida`;
+    } else {
+        newDisplay.innerHTML = "";
+        studentList.push(newStudent);
+        console.log(studentList);
+        newDisplay.innerHTML += `<br> Il nuovo studente è ${newStudent.nome} ${newStudent.cognome} ed ha ${newStudent.eta} anni.`
+    }
 });
 
 
