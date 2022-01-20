@@ -77,9 +77,9 @@ const newDisplay = document.getElementById("new-display");
 
 
 sendBtn.addEventListener('click', () => {
-    const newName = document.getElementById("new-name").value;
-    const newSurname = document.getElementById("new-surname").value;
-    const newAge = parseInt(document.getElementById("new-age").value);
+    const newName = document.getElementById("new-name").value.trim();
+    const newSurname = document.getElementById("new-surname").value.trim();
+    const newAge = parseInt(document.getElementById("new-age").value.trim());
 
     const newStudent = {
         nome: newName,
